@@ -1,6 +1,6 @@
 {
-  "name": "nwidart/laravel-menus",
-  "description": "Laravel Menu management",
+  "name": "poseso/modular-menu",
+  "description": "Laravel Menu management package",
   "keywords": [
     "laravel",
     "menus",
