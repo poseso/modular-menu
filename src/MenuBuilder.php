@@ -500,6 +500,7 @@ class MenuBuilder implements Countable
      *
      * @return int
      */
+    #[\ReturnTypeWillChange]
     public function count()
     {
         return count($this->items);

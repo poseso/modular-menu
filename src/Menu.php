@@ -160,6 +160,7 @@ class Menu implements Countable
      *
      * @return int
      */
+    #[\ReturnTypeWillChange]
     public function count()
     {
         return count($this->menus);
