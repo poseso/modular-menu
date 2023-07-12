@@ -53,5 +53,6 @@
         "Menu": "Nwidart\\Menus\\Facades\\Menu"
       }
     }
-  }
+  },
+  "minimum-stability": "dev"
 }
