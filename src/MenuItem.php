@@ -20,6 +20,7 @@ use Illuminate\Support\Str;
  * @property bool active
  * @property int order
  */
+#[\AllowDynamicProperties]
 class MenuItem implements ArrayableContract
 {
     /**
