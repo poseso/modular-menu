@@ -3,7 +3,7 @@
 namespace Nwidart\Menus;
 
 use Closure;
-use Spatie\Menu\Html as HTML;
+use Spatie\Html\Facades\Html as HTML;
 use Illuminate\Contracts\Support\Arrayable as ArrayableContract;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Request;
