@@ -38,7 +38,7 @@ class MenusServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->registerHtmlPackage();
+//        $this->registerHtmlPackage();
 
         $this->app->singleton('menus', function ($app) {
             return new Menu($app['view'], $app['config']);
@@ -50,12 +50,12 @@ class MenusServiceProvider extends ServiceProvider
      */
     private function registerHtmlPackage()
     {
-        $this->app->register('Collective\Html\HtmlServiceProvider');
+/*        $this->app->register('Collective\Html\HtmlServiceProvider');
 
         $aliases = [
             'HTML' => 'Collective\Html\HtmlFacade',
             'Form' => 'Collective\Html\FormFacade',
-        ];
+        ];*/
 
         AliasLoader::getInstance($aliases)->register();
     }
