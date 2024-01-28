@@ -3,11 +3,12 @@
 namespace Nwidart\Menus;
 
 use Closure;
-use Spatie\Html\Facades\Html as HTML;
 use Illuminate\Contracts\Support\Arrayable as ArrayableContract;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Str;
+use Spatie\Html\Attributes;
+use Spatie\Html\Facades\Html as HTML;
 
 /**
  * @property string url
@@ -383,12 +384,9 @@ class MenuItem implements ArrayableContract
     public function getAttributes()
     {
         $attributes = $this->attributes ? $this->attributes : [];
-
         Arr::forget($attributes, ['active', 'icon']);
-
-        return HTML::attributes($attributes);
+        return (new Attributes($attributes))->render();
     }
-
     /**
      * Check is the current item divider.
      *
