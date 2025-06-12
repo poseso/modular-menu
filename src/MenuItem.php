@@ -384,9 +384,27 @@ class MenuItem implements ArrayableContract
     public function getAttributes()
     {
         $attributes = $this->attributes ? $this->attributes : [];
+
         Arr::forget($attributes, ['active', 'icon']);
-        return (new Attributes($attributes))->render();
+
+        // Manual rendering instead of relying on Spatie\Html\Attributes
+        // The Spatie library was not properly handling certain attributes
+        if (empty($attributes)) {
+            return '';
+        }
+
+        $attributeString = '';
+
+        foreach ($attributes as $key => $value) {
+            // Skip boolean false values and empty strings, but allow "0" and other truthy values
+            if ($value !== null && $value !== false && $value !== '') {
+                $attributeString .= ' ' . htmlspecialchars($key) . '="' . htmlspecialchars($value) . '"';
+            }
+        }
+
+        return trim($attributeString);
     }
+
     /**
      * Check is the current item divider.
      *
